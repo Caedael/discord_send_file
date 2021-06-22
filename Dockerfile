@@ -1,4 +1,5 @@
 FROM python:slim
 ADD script.py /
-RUN pip install discord_webhook
-CMD ["python", "./script.py"]
+ADD embeds.py /
+RUN pip install discord_webhook requests 
+#CMD ["python", "/script.py"]
