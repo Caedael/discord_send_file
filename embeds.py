@@ -6,7 +6,7 @@ def main(argv):
   state=''
   job_id=''
   job_url=''
-  artifact=False
+  artifacts=False
 
   try:
     opts, args = getopt.getopt(argv, "s:w:a:i:u:",["state=","webhook_url=","artifact=", "job_id=", "job_url="])
@@ -30,7 +30,7 @@ def main(argv):
   	color=3066993
   else:
   	color=15158332
-  if artifacts:
+  if artifacts and state == "success":
     webhook_data={
       "username":os.environ["CI_PROJECT_NAME"],
       "avatar_url":"https://gitlab.com/favicon.png",
